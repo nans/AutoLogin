@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="autologin" translate="label" sortOrder="100">
+            <label>Auto login</label>
+        </tab>
+
+        <section id="autologin" translate="label" type="text" sortOrder="400" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Settings</label>
+            <tab>autologin</tab>
+            <resource>Nans_AutoLogin::config</resource>
+
+            <group id="customer" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Customer - Frontend</label>
+
+                <field id="enabled" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Autologin to customer account</comment>
+                </field>
+
+                <field id="id" translate="label comment" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Customer</label>
+                    <validate>required-entry</validate>
+                    <source_model>Nans\AutoLogin\Model\Customer\Source\Customer</source_model>
+                    <comment>Choose customer for autologin</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+
+            </group>
+
+            <group id="user" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>User - Admin panel</label>
+
+                <field id="enabled" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Autologin to admin panel</comment>
+                </field>
+
+                <field id="id" translate="label comment" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>User</label>
+                    <validate>required-entry</validate>
+                    <source_model>Nans\AutoLogin\Model\Customer\Source\User</source_model>
+                    <comment>Choose user for autologin</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+
+            </group>
+
+        </section>
+    </system>
+</config>
