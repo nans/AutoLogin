@@ -1,6 +1,6 @@
 <?php
 
-namespace Nans\AutoLogin\Plugin\Customer\Model\Session;
+namespace Nans\AutoLogin\Plugin\Customer\Model;
 
 use Magento\Customer\Model\Session;
 use Nans\AutoLogin\Helper\CoreConfig;
