@@ -32,7 +32,7 @@ class CoreConfig
      */
     public function customerEnabled(): bool
     {
-        return ($this->_scopeConfig->getValue(self::CUSTOMER_ENABLED)) ? true : false;
+        return $this->_scopeConfig->getValue(self::CUSTOMER_ENABLED) == true;
     }
 
     /**
@@ -40,7 +40,7 @@ class CoreConfig
      */
     public function userEnabled(): bool
     {
-        return ($this->_scopeConfig->getValue(self::USER_ENABLED)) ? true : false;
+        return $this->_scopeConfig->getValue(self::USER_ENABLED) == true;
     }
 
     /**

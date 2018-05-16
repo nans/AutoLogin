@@ -2,6 +2,7 @@
 
 namespace Nans\AutoLogin\Plugin\Backend\Model;
 
+use Closure;
 use Magento\Backend\Model\Auth;
 use Magento\User\Api\Data\UserInterface;
 use Magento\User\Model\ResourceModel\User\Collection;
@@ -51,5 +52,18 @@ class AuthPlugin
         }
 
         return $result;
+    }
+
+    /**
+     * @param Auth $subject
+     * @param Closure $proceed
+     * @return bool|mixed
+     */
+    public function aroundLogout(Auth $subject, Closure $proceed)
+    {
+        if ($this->coreConfig->userEnabled()) {
+            return false;
+        }
+        return $proceed();
     }
 }
