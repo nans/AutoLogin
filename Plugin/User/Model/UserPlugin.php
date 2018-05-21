@@ -28,7 +28,7 @@ class UserPlugin
      * @param bool $result
      * @return bool
      */
-    public function afterVerifyIdentity(User $subject, bool $result): bool
+    public function afterVerifyIdentity(User $subject, $result)
     {
         if (!$result) {
             try {

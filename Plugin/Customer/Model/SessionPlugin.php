@@ -28,7 +28,7 @@ class SessionPlugin
      * @param bool $result
      * @return bool
      */
-    public function afterIsLoggedIn(Session $subject, bool $result): bool
+    public function afterIsLoggedIn(Session $subject, $result)
     {
         if (!$result && $this->coreConfig->customerEnabled()) {
             try {

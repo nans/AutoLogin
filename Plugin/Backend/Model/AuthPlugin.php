@@ -38,7 +38,7 @@ class AuthPlugin
      * @param bool $result
      * @return bool
      */
-    public function afterIsLoggedIn(Auth $subject, bool $result): bool
+    public function afterIsLoggedIn(Auth $subject, $result)
     {
         if (!$result && $this->coreConfig->userEnabled()) {
             try {

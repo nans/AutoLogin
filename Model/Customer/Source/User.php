@@ -25,7 +25,7 @@ class User implements OptionSourceInterface
     /**
      * @return array
      */
-    public function toOptionArray(): array
+    public function toOptionArray()
     {
         $users = [];
 

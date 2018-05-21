@@ -30,7 +30,7 @@ class CoreConfig
     /**
      * @return bool
      */
-    public function customerEnabled(): bool
+    public function customerEnabled()
     {
         return $this->_scopeConfig->getValue(self::CUSTOMER_ENABLED) == true;
     }
@@ -38,7 +38,7 @@ class CoreConfig
     /**
      * @return bool
      */
-    public function userEnabled(): bool
+    public function userEnabled()
     {
         return $this->_scopeConfig->getValue(self::USER_ENABLED) == true;
     }
@@ -47,7 +47,7 @@ class CoreConfig
      * @return int
      * @throws NotFoundException
      */
-    public function getCustomerId(): int
+    public function getCustomerId()
     {
         $customer = $this->_scopeConfig->getValue(self::CUSTOMER_ID);
         if (!$customer) {
@@ -60,7 +60,7 @@ class CoreConfig
      * @return int
      * @throws NotFoundException
      */
-    public function getUserId(): int
+    public function getUserId()
     {
         $admin = $this->_scopeConfig->getValue(self::USER_ID);
         if (!$admin) {
