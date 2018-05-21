@@ -12,6 +12,8 @@ Note: if activated autologin for admin, you cant's sign out.
 
 # Supported  
 Magento 2.1.x - 2.3.x  
+Magento 2.0 - correct work is not guaranteed  
+[PHP 5.6](https://github.com/nans/AutoLogin/tree/php-5.6)  
 PHP 7.0 and higher  
 
 # Installation Instruction  
