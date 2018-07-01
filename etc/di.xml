@@ -9,4 +9,11 @@
     <type name="Magento\User\Model\User">
         <plugin name="auto_login_user_plugin" type="Nans\AutoLogin\Plugin\User\Model\UserPlugin" />
     </type>
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="autologin_disable" xsi:type="object">Nans\AutoLogin\Console\Command\DisableCommand</item>
+            </argument>
+        </arguments>
+    </type>
 </config>
