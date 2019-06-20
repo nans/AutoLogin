@@ -1,14 +1,13 @@
 # AutoLogin - Magento 2 extension 
-Magento 2 - Autologin for customer (frontend) and user (admin panel) 
-
+Magento 2 - Autologin for customer (frontend) and user (admin panel)  
 Admin can activate autologin for customer and admin.  
+![Sample](https://github.com/nans/devdocs/blob/master/AutoLogin/Settings.png "Settings")    
 
-For good work recomended in Settings -> Advanced - Admin - Security  
-Set:  
-Admin Account Sharing set Yes  
-Add Secret Key to URLs set No 
+For good work recommended in "Settings -> Advanced - Admin - Security" set next settings:  
+"Yes" for "Admin Account Sharing"   
+"No" for "Add Secret Key to URLs"  
 
-Note: if activated autologin for admin, you cant's sign out.  
+Note: if activated autologin for admin, you can't sign out.  
 
 # Supported  
 Magento 2.1.x - 2.3.x  
