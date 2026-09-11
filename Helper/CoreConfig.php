@@ -9,10 +9,10 @@ use Magento\Framework\Exception\NotFoundException;
 
 class CoreConfig
 {
-    const CUSTOMER_ENABLED = 'autologin/customer/enabled';
-    const CUSTOMER_ID = 'autologin/customer/id';
-    const USER_ENABLED = 'autologin/user/enabled';
-    const USER_ID = 'autologin/user/id';
+    const string CUSTOMER_ENABLED = 'autologin/customer/enabled';
+    const string CUSTOMER_ID = 'autologin/customer/id';
+    const string USER_ENABLED = 'autologin/user/enabled';
+    const string USER_ID = 'autologin/user/id';
 
     /**
      * @var ScopeConfigInterface
@@ -34,7 +34,7 @@ class CoreConfig
      */
     public function customerEnabled(): bool
     {
-        return $this->_scopeConfig->getValue(self::CUSTOMER_ENABLED) == true;
+        return $this->_scopeConfig->isSetFlag(self::CUSTOMER_ENABLED) == true;
     }
 
     /**
@@ -42,7 +42,7 @@ class CoreConfig
      */
     public function userEnabled(): bool
     {
-        return $this->_scopeConfig->getValue(self::USER_ENABLED) == true;
+        return $this->_scopeConfig->isSetFlag(self::USER_ENABLED) == true;
     }
 
     /**
@@ -53,9 +53,9 @@ class CoreConfig
     {
         $customer = $this->_scopeConfig->getValue(self::CUSTOMER_ID);
         if (!$customer) {
-            throw new NotFoundException(__('Customer not selected'));
+            throw new NotFoundException(__('Customer account is not selected.'));
         }
-        return $customer;
+        return (int)$customer;
     }
 
     /**
@@ -66,8 +66,8 @@ class CoreConfig
     {
         $admin = $this->_scopeConfig->getValue(self::USER_ID);
         if (!$admin) {
-            throw new NotFoundException(__('User not selected'));
+            throw new NotFoundException(__('Admin account is not selected.'));
         }
-        return $admin;
+        return (int)$admin;
     }
 }

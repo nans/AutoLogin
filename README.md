@@ -1,30 +1,30 @@
 # AutoLogin - Magento 2 extension 
-Magento 2 - Autologin for customer (frontend) and user (admin panel)  
-Admin can activate autologin for customer and admin.  
+Magento 2 - Autologin for customers (frontend) and admins (backend)  
+An admin can activate autologin for customers and admins.  
 ![Sample](https://github.com/nans/devdocs/blob/master/AutoLogin/Settings.png "Settings")    
 
-For good work recommended in "Settings -> Advanced - Admin - Security" set next settings:  
+For proper operation, it is recommended to set the following options in "Settings -> Advanced - Admin - Security":  
 "Yes" for "Admin Account Sharing"   
 "No" for "Add Secret Key to URLs"  
 
-Note: if activated autologin for admin, you can't sign out.  
+Note: If autologin is enabled for an admin, you cannot log out.  
 
 # Supported  
-Magento 2.1.x and higher.  
-Magento 2.0 - correct work is not guaranteed.  
-Required PHP 8.0 and higher.  
+Magento 2.1.x and higher.   
+Requires PHP 8.0 or higher.  
 
-# Installation Instruction  
-* Copy the content of the repo to the Magento 2: app/code/Nans/AutoLogin  
-* Run command: php bin/magento setup:upgrade  
-* Run command: php bin/magento cache:clean
+# Installation Instructions  
+* Copy the contents of the repository to:: app/code/Nans/AutoLogin  
+* Run the following command: php bin/magento module:enable Nans_AutoLogin  
+* Run the following command: php bin/magento setup:upgrade  
+* Run the following command: php bin/magento cache:clean  
 
 # Support  
 If you encounter any problems or bugs, please open an [issue](https://github.com/nans/AutoLogin/issues) on GitHub.
 
-## Command for disable autologin on frontend and backend  
+## Commands for disabling autologin on the frontend and backend  
 For frontend: php bin/magento autologin:disable f  
 For backend: php bin/magento autologin:disable b  
 For backend and frontend: php bin/magento autologin:disable all 
 
-After command execute, for clean cache run command: php bin/magento cache:clean
+After executing the command, clear the cache by running: php bin/magento cache:clean
