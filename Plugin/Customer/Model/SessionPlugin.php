@@ -10,10 +10,9 @@ class SessionPlugin
     /**
      * @var CoreConfig
      */
-    private $coreConfig;
+    private CoreConfig $coreConfig;
 
     /**
-     * SessionPlugin constructor.
      * @param CoreConfig $coreConfig
      */
     public function __construct(

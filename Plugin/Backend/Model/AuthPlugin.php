@@ -13,12 +13,12 @@ class AuthPlugin
     /**
      * @var Collection
      */
-    private $collection;
+    private Collection $collection;
 
     /**
      * @var CoreConfig
      */
-    private $coreConfig;
+    private CoreConfig $coreConfig;
 
     /**
      * @param CoreConfig $coreConfig

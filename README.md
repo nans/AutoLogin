@@ -10,10 +10,9 @@ For good work recommended in "Settings -> Advanced - Admin - Security" set next 
 Note: if activated autologin for admin, you can't sign out.  
 
 # Supported  
-Magento 2.1.x - 2.3.x  
-Magento 2.0 - correct work is not guaranteed  
-[PHP 5.6](https://github.com/nans/AutoLogin/tree/php-5.6)  
-PHP 7.0 and higher  
+Magento 2.1.x and higher.  
+Magento 2.0 - correct work is not guaranteed.  
+Required PHP 8.0 and higher.  
 
 # Installation Instruction  
 * Copy the content of the repo to the Magento 2: app/code/Nans/AutoLogin  
