@@ -14,11 +14,11 @@ use Nans\AutoLogin\Helper\CoreConfig;
 
 class DisableCommand extends Command
 {
-    const COMMAND_NAME = 'autologin:disable';
-    const INPUT_KEY_TYPE = 'type';
-    const VALUE_FRONTEND = 'f';
-    const VALUE_BACKEND = 'b';
-    const VALUE_ALL = 'all';
+    const string COMMAND_NAME = 'autologin:disable';
+    const string INPUT_KEY_TYPE = 'type';
+    const string VALUE_FRONTEND = 'f';
+    const string VALUE_BACKEND = 'b';
+    const string VALUE_ALL = 'all';
 
     /**
      * @var Config
@@ -38,7 +38,7 @@ class DisableCommand extends Command
 
     protected function configure()
     {
-        $this->setName(self::COMMAND_NAME)->setDescription('Disable autologin for backend or frontend');
+        $this->setName(self::COMMAND_NAME)->setDescription('Command to disable automatic login.');
         $this->addArgument(self::INPUT_KEY_TYPE, InputArgument::REQUIRED, __('Type a string')->render());
         parent::configure();
     }
@@ -52,7 +52,7 @@ class DisableCommand extends Command
     {
         try {
             $this->disableAutoLoginByType($input->getArgument(self::INPUT_KEY_TYPE));
-            $output->writeln('Autologin was disabled. Clean the cache to make changes.');
+            $output->writeln('The automatic login feature has been disabled. Clear the cache for the changes to take effect.');
         } catch (\Exception $e) {
             $output->writeln('<error>' . $e->getMessage() . '</error>');
         }
@@ -66,7 +66,7 @@ class DisableCommand extends Command
     {
         if ($type != self::VALUE_FRONTEND && $type != self::VALUE_BACKEND && $type != self::VALUE_ALL) {
             throw new LocalizedException(
-                __('Use %1 for frontend or %2 for backend',
+                __('To disable a specific functionality, use value %1 for customers and value %2 for admins.',
                     self::VALUE_FRONTEND,
                     self::VALUE_BACKEND)
             );
