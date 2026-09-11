@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Nans\AutoLogin\Helper;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
@@ -15,7 +17,7 @@ class CoreConfig
     /**
      * @var ScopeConfigInterface
      */
-    protected $_scopeConfig;
+    protected ScopeConfigInterface $_scopeConfig;
 
     /**
      * @param ScopeConfigInterface $scopeConfig

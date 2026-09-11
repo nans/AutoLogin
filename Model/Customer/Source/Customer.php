@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Nans\AutoLogin\Model\Customer\Source;
 
 use Magento\Customer\Api\Data\CustomerInterface;
@@ -11,7 +13,7 @@ class Customer implements OptionSourceInterface
     /**
      * @var Collection
      */
-    private $collection;
+    private Collection $collection;
 
     /**
      * @param Collection $collection

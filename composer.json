@@ -2,13 +2,13 @@
     "name": "nans/magento2-autologin",
     "description": "Magento 2 - Customer and admin autologin",
     "require": {
-        "php": ">=7.0"
+        "php": ">=8.0"
     },
     "license": [
         "MIT"
     ],
     "type": "magento2-module",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "support": {
         "issues": "https://github.com/nans/AutoLogin/issues"
     },

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Nans\AutoLogin\Console\Command;
 
 use Magento\Framework\Exception\LocalizedException;
@@ -21,7 +23,7 @@ class DisableCommand extends Command
     /**
      * @var Config
      */
-    private $config;
+    private Config $config;
 
     /**
      * @param Config $config
@@ -37,7 +39,7 @@ class DisableCommand extends Command
     protected function configure()
     {
         $this->setName(self::COMMAND_NAME)->setDescription('Disable autologin for backend or frontend');
-        $this->addArgument(self::INPUT_KEY_TYPE, InputArgument::REQUIRED, __('Type a string'));
+        $this->addArgument(self::INPUT_KEY_TYPE, InputArgument::REQUIRED, __('Type a string')->render());
         parent::configure();
     }
 
@@ -60,7 +62,7 @@ class DisableCommand extends Command
      * @param string $type
      * @throws LocalizedException
      */
-    protected function disableAutoLoginByType($type)
+    protected function disableAutoLoginByType(string $type): void
     {
         if ($type != self::VALUE_FRONTEND && $type != self::VALUE_BACKEND && $type != self::VALUE_ALL) {
             throw new LocalizedException(
@@ -84,14 +86,14 @@ class DisableCommand extends Command
         }
     }
 
-    protected function disableFrontend()
+    protected function disableFrontend(): void
     {
-        $this->config->saveConfig(CoreConfig::CUSTOMER_ENABLED, 0, 'default', 0);
+        $this->config->saveConfig(CoreConfig::CUSTOMER_ENABLED, '0', 'default', 0);
     }
 
-    protected function disableBackend()
+    protected function disableBackend(): void
     {
-        $this->config->saveConfig(CoreConfig::USER_ENABLED, 0, 'default', 0);
+        $this->config->saveConfig(CoreConfig::USER_ENABLED, '0', 'default', 0);
     }
 }
 

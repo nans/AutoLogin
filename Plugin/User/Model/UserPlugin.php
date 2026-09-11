@@ -10,10 +10,9 @@ class UserPlugin
     /**
      * @var CoreConfig
      */
-    private $coreConfig;
+    private CoreConfig $coreConfig;
 
     /**
-     * UserPlugin constructor.
      * @param CoreConfig $coreConfig
      */
     public function __construct(
