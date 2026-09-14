@@ -14,10 +14,17 @@ Magento 2.1.x and higher.
 Requires PHP 8.0 or higher.  
 
 # Installation Instructions  
-* Copy the contents of the repository to:: app/code/Nans/AutoLogin  
+## Upload Magento extension via ZIP/Archive
+* Copy the contents of the repository to: app/code/Nans/AutoLogin  
 * Run the following command: php bin/magento module:enable Nans_AutoLogin  
 * Run the following command: php bin/magento setup:upgrade  
 * Run the following command: php bin/magento cache:clean  
+##  Install Magento 2 extension via Composer
+* Run the following command: composer require nans/magento2-autologin
+* Run the following command: php bin/magento module:enable Nans_AutoLogin
+* Run the following command: php bin/magento setup:upgrade
+* Run the following command: php bin/magento cache:clean  
+
 
 # Support  
 If you encounter any problems or bugs, please open an [issue](https://github.com/nans/AutoLogin/issues) on GitHub.
