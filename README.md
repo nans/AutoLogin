@@ -10,8 +10,8 @@ For proper operation, it is recommended to set the following options in "Setting
 Note: If autologin is enabled for an admin, you cannot log out.  
 
 # Supported  
-Magento 2.1.x and higher.   
-Requires PHP 8.0 or higher.  
+Magento between 2.1.x and 2.4.8.   
+Requires PHP 8.1 or higher.  
 
 # Installation Instructions  
 ## Upload Magento extension via ZIP/Archive

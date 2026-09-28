@@ -32,7 +32,7 @@ class SessionPlugin
         if (!$result && $this->coreConfig->customerEnabled()) {
             try {
                 return $subject->loginById($this->coreConfig->getCustomerId());
-            } catch (\Exception $exception) {
+            } catch (\Throwable $exception) {
                 return $result;
             }
         }

@@ -9,10 +9,10 @@ use Magento\Framework\Exception\NotFoundException;
 
 class CoreConfig
 {
-    const string CUSTOMER_ENABLED = 'autologin/customer/enabled';
-    const string CUSTOMER_ID = 'autologin/customer/id';
-    const string USER_ENABLED = 'autologin/user/enabled';
-    const string USER_ID = 'autologin/user/id';
+    const CUSTOMER_ENABLED = 'autologin/customer/enabled';
+    const CUSTOMER_ID = 'autologin/customer/id';
+    const USER_ENABLED = 'autologin/user/enabled';
+    const USER_ID = 'autologin/user/id';
 
     /**
      * @var ScopeConfigInterface
@@ -34,7 +34,7 @@ class CoreConfig
      */
     public function customerEnabled(): bool
     {
-        return $this->_scopeConfig->isSetFlag(self::CUSTOMER_ENABLED) == true;
+        return $this->_scopeConfig->isSetFlag(self::CUSTOMER_ENABLED);
     }
 
     /**
@@ -42,7 +42,7 @@ class CoreConfig
      */
     public function userEnabled(): bool
     {
-        return $this->_scopeConfig->isSetFlag(self::USER_ENABLED) == true;
+        return $this->_scopeConfig->isSetFlag(self::USER_ENABLED);
     }
 
     /**
