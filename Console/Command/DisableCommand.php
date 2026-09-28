@@ -14,11 +14,11 @@ use Nans\AutoLogin\Helper\CoreConfig;
 
 class DisableCommand extends Command
 {
-    const string COMMAND_NAME = 'autologin:disable';
-    const string INPUT_KEY_TYPE = 'type';
-    const string VALUE_FRONTEND = 'f';
-    const string VALUE_BACKEND = 'b';
-    const string VALUE_ALL = 'all';
+    const COMMAND_NAME = 'autologin:disable';
+    const INPUT_KEY_TYPE = 'type';
+    const VALUE_FRONTEND = 'f';
+    const VALUE_BACKEND = 'b';
+    const VALUE_ALL = 'all';
 
     /**
      * @var Config
@@ -36,7 +36,7 @@ class DisableCommand extends Command
         $this->config = $config;
     }
 
-    protected function configure()
+    protected function configure():void
     {
         $this->setName(self::COMMAND_NAME)->setDescription('Command to disable automatic login.');
         $this->addArgument(self::INPUT_KEY_TYPE, InputArgument::REQUIRED, __('Type a string')->render());
@@ -48,7 +48,7 @@ class DisableCommand extends Command
      * @param OutputInterface $output
      * @return void
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): void
     {
         try {
             $this->disableAutoLoginByType($input->getArgument(self::INPUT_KEY_TYPE));

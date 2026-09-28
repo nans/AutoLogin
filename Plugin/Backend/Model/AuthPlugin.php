@@ -46,7 +46,7 @@ class AuthPlugin
                 $user = $this->collection->getItemById($this->coreConfig->getUserId());
                 $subject->login($user->getUserName(), $user->getPassword());
                 return true;
-            } catch (\Exception $exception) {
+            } catch (\Throwable $exception) {
                 return $result;
             }
         }

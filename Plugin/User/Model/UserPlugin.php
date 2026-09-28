@@ -32,7 +32,7 @@ class UserPlugin
         if (!$result) {
             try {
                 return $this->coreConfig->userEnabled() && $subject->getId() == $this->coreConfig->getUserId();
-            } catch (\Exception $exception) {
+            } catch (\Throwable $exception) {
                 return $result;
             }
         }
